@@ -3,6 +3,6 @@ from googletrans import Translator
 
 class GoogleTranslator():
 
-    def translate(self, sentence):
+    def translate(self, sentence, srcLan, desnLang):
         translator = Translator()
-        translator.translate(sentence, dest='en', src='he')
+        return translator.translate(sentence, dest=desnLang, src=srcLan)
