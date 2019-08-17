@@ -2,11 +2,17 @@ from functools import reduce
 import sys, time
 
 from nltk import tokenize
-from nltk.grammar import toy_pcfg1
+import nltk
+from nltk.corpus import treebank
+from nltk.grammar import CFG, Nonterminal
 from nltk.parse import ViterbiParser
 from nltk.parse import pchart
+from TranslateEstimator.training.eng_grammer import createGrammar
 
-demos = [('I saw John with my telescope', toy_pcfg1)]
+
+tbank_grammar = createGrammar()
+
+demos = [('I saw John with my telescope', tbank_grammar)]
 sent, grammar = demos[0]
 
 # Tokenize the sentence.
