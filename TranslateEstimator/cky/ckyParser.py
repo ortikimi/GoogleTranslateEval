@@ -7,7 +7,7 @@ from nltk.corpus import treebank
 from nltk.grammar import CFG, Nonterminal
 from nltk.parse import ViterbiParser
 from nltk.parse import pchart
-from TranslateEstimator.training.eng_grammer import createGrammar
+from TranslateEstimator.training.eng_grammar import createGrammar
 
 
 tbank_grammar = createGrammar()
