@@ -1,61 +1,56 @@
-import pandas as pd
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import urllib
-import codecs
-import os, glob
+import csv
+import os
+
+TED_FILE = 'ted_talks.csv'
+
+def get_parallel_corpus():
+    if os.path.isfile(TED_FILE) == False:
+        init_ted_talks()
+    with open(TED_FILE, 'rt', encoding='utf-16') as fh:
+        text_dict = csv.DictReader(fh, delimiter='\t')
+    return text_dict
 
 def init_ted_talks():
-    all_talk_names = {}
-    #for i in range(1, 61):
-        #path = "https://www.ted.com/talks/rachel_botsman_the_currency_of_the_new_economy_is_trust/transcript"
-        #all_talk_names = enlist_talk_names(path, all_talk_names)
-    #all_talk_names =
-    #for i in all_talk_names:
-    extract_talk('https://www.ted.com/talks/anthony_mccarten_a_not_so_scientific_experiment_on_laughter/transcript', 'anthony_mccarten_a_not_so_scientific_experiment_on_laughter')
+    talks_list = []
+    enlist_talk_names(talks_list)
+    hebrew_sentences = []
+    english_sentences = []
+    for link in talks_list:
+        extract_talk(link,'he', hebrew_sentences)
+        extract_talk(link, 'en', english_sentences)
+    with open(TED_FILE, encoding='utf-16', mode='w') as ted_talks_file:
+        tedtalks_writer = csv.writer(ted_talks_file, delimiter='\t', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        tedtalks_writer.writerow(['en', 'he'])
+        total_sentences = min(len(hebrew_sentences), len(english_sentences))
+        for i in range(total_sentences):
+            tedtalks_writer.writerow([english_sentences[i], hebrew_sentences[i]])
 
-    path = 'D:\temp'
-    os.chdir(path)
-    pieces = []
-    for file in glob.glob('*.csv'):
-        print(file)
-        frame = pd.read_csv(path + file, sep='\t', encoding='utf-8')
-        pieces.append(frame)
-    df = pd.concat(pieces, ignore_index=True)
-    df.to_csv('TED_TALKS', sep='\t', encoding='utf-8')
-    df[['he, en']]
+def enlist_talk_names(talks_list):
+    contents = urllib.request.urlopen("https://www.ted.com/talks?language=he&sort=popular").read()
+    soup = BeautifulSoup(contents)
+    talks = soup.find_all("a", class_='ga-link')
+    for i in talks:
+        if i.attrs['href'].find('/talks/') == 0:
+            link = i.attrs['href']
+            index_q = link.rfind('?')
+            transcript_link = 'https://www.ted.com' + link[:index_q] + '/transcript'
+            if transcript_link not in talks_list:
+                talks_list.append(transcript_link)
 
-
-def enlist_talk_names(path, dict_):
-    with urlopen(path) as conn:
-        soup = BeautifulSoup(conn)
-        talks = soup.find_all("a", class_='')
-        for i in talks:
-            if i.attrs['href'].find('/talks/')==0 and dict_.get(i.attrs['href'])!=1:
-                dict_[i.attrs]['href'] = 1
-        return dict_
-
-def extract_talk(path, talk_name):
-    df = pd.DataFrame()
-    print(path)
-    path_english = path+'?language=en'
-    path_hebrew = path +'?language=he'
-    contents = urllib.request.urlopen(path_english).read()
-    soup1 = BeautifulSoup(contents)
-    time_frame = []
-    text_talk = []
-    paragraph = soup1.find('p')
-    text_talk.append(paragraph.text.replace('\t', ''))
-    df1 = pd.DataFrame()
-    df1['en'] = paragraph
-    df = pd.concat([df, df1], axis=1)
-    contents = urllib.request.urlopen(path_hebrew).read()
-    soup1 = BeautifulSoup(contents)
-    text_talk = []
-    paragraph = soup1.find('p')
-    text_talk.append(paragraph.text.replace('\t', ''))
-    df1 = pd.DataFrame()
-    df1['he'] = paragraph
-    df = pd.concat([df, df1], axis=1)
-    df.to_csv(talk_name+'.csv', sep='\t', encoding='utf-8')
+def extract_talk(path, lang, lang_sentences):
+    lang_path = path + '?language=' + lang
+    hdr = {'User-Agent': 'parallel corpus'}
+    req = urllib.request.Request(lang_path, headers=hdr)
+    contents = urllib.request.urlopen(req).read()
+    soup = BeautifulSoup(contents)
+    paragraphes = soup.find_all('p')
+    page_text = []
+    for p in paragraphes:
+        text = p.text.replace('\t', '')
+        text = text.replace('\n', ' ')
+        page_text.append(text)
+    lang_sentences.append(page_text)
 

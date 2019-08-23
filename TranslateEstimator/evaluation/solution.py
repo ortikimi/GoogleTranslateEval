@@ -1,8 +1,8 @@
 from TranslateEstimator.yap.yapParser import parse
 from TranslateEstimator.google_api.translator import GoogleTranslator
-from TranslateEstimator.TED.tedTalks import init_ted_talks
+from TranslateEstimator.Wikipedia.wikipedia import get_parallel_corpus
 class Solution:
-    init_ted_talks()
+    multi_lingual_sentences = get_parallel_corpus()
     sentence = "I want to sleep"
     translated = GoogleTranslator.translate(sentence, 'en', 'he')
     parse(translated.text)
