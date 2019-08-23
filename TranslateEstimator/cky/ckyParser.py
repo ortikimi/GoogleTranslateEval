@@ -1,10 +1,11 @@
 from functools import reduce
 import sys, time
-import nltk
+
 from nltk import induce_pcfg
+from nltk import pos_tag
 from nltk import tokenize
 from nltk import treetransforms
-from nltk import pos_tag
+import nltk
 from nltk.corpus import treebank
 from nltk.grammar import PCFG, Nonterminal, toy_pcfg1
 from nltk.parse import ViterbiParser
@@ -22,7 +23,6 @@ class CKYParser:
         return missing
     
     def createGrammar(self, unkownWords):
-        print("Induce PCFG grammar from treebank data:")
         productions = []
         for item in treebank.fileids():
           for tree in treebank.parsed_sents(item):
@@ -49,49 +49,11 @@ class CKYParser:
         if(unknown_words != []):
             grammar = self.createGrammar(unknown_words)
         # Define a list of parsers.  We'll use all parsers.
-        parsers = [
-        ViterbiParser(grammar),
-        ]
+        parser = ViterbiParser(grammar)
         
-        times = []
-        average_p = []
-        num_parses = []
-        all_parses = {}
-        for parser in parsers:
-            print('\ns: %s\nparser: %s\ngrammar: %s' % (sent, parser, grammar))
-            parser.trace(3)
-            t = time.time()
-            parses = parser.parse_all(words)
-            times.append(time.time() - t)
-            if parses: 
-                lp = len(parses)
-                p = reduce(lambda a, b:a + b.prob(), parses, 0.0)
-            else: 
-                p = 0
-            average_p.append(p)
-            num_parses.append(len(parses))
-            for p in parses: 
-                all_parses[p.freeze()] = 1
-        
-        # Print summary statistics
-        print()
-        print('-------------------------+------------------------------------------')
-        print('   Parser           Beam | Time (secs)   # Parses   Average P(parse)')
-        print('-------------------------+------------------------------------------')
-        for i in range(len(parsers)):
-            print('%19s %4d |%11.4f%11d%19.14f' % (parsers[i].__class__.__name__,
-              getattr(parsers[0], "beam_size", 0),
-              times[i],
-              num_parses[i],
-              average_p[i]))
-        parses = all_parses.keys()
-        if parses: 
-            p = reduce(lambda a, b:a + b.prob(), parses, 0) / len(parses)
-        else: 
-            p = 0
-        print('-------------------------+------------------------------------------')
-        print('%19s      |%11s%11d%19.14f' % ('(All Parses)', 'n/a', len(parses), p))
-        print()
+        #print('\ns: %s\nparser: %s\ngrammar: %s' % (sent, parser, grammar))
+        #parser.trace(3)
+        parses = parser.parse_all(words)
         
         for parse in parses:
             print(parse)

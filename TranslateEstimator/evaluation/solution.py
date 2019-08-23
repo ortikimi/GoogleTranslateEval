@@ -1,17 +1,35 @@
-from yap.yapParser import parse
-from google_api.translator import GoogleTranslator
+from Wikipedia.wikipedia import get_parallel_corpus
 from cky.ckyParser import CKYParser
+from google_api.translator import GoogleTranslator
+from yap.yapParser import parse
+
+
+LIMIT_PARSER = 1
 
 
 class Evaluator:
-#     init_ted_talks()
-#     sentence = "I want to sleep"
-#     translated = GoogleTranslator.translate(sentence, 'en', 'he')
-#     parse(translated.text)
-#     evaluate_eng_to_heb('','I saw a telescope');
+
+    multi_lingual_sentences = get_parallel_corpus()
+    googleTranslator = GoogleTranslator()
     parser = CKYParser()
-    eng_tag = parser.parseSentence('Elad saw 8 telescopes')
-    print(eng_tag)
+
+    count = 0
+
+    for sentence in multi_lingual_sentences:
+        if (count == LIMIT_PARSER):
+            print('finish')
+            break
+        count += 1
+        translated = googleTranslator.translate(sentence.en_sentence, 'en', 'he')
+        print('Translating English Text')
+        print(sentence.en_sentence)
+        print('Tagging the givern sentence')
+        eng_tag = parser.parseSentence(sentence.en_sentence)
+        print(eng_tag)
+#         print('Parsing hebrew text')
+#         print(translated.text)
+# 
+
     
     def evaluate_eng_to_heb(self, heb_sent, eng_sent):
         parser = CKYParser()
