@@ -1,6 +1,6 @@
 import os
 from translate.storage.tmx import tmxfile
-from TranslateEstimator.Common.multi_lingual_sentence import MultiLingualSentence
+from Common.multi_lingual_sentence import MultiLingualSentence
 
 WIKIPEDIA_FILE = 'corpus.tmx'
 
