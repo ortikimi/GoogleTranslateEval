@@ -3,11 +3,10 @@ from cky.ckyParser import CKYParser
 from google_api.translator import GoogleTranslator
 from yap.yapParser import parse
 
-
 LIMIT_PARSER = 1
 
 
-class Evaluator:
+class TranslateEvaluator:
 
     multi_lingual_sentences = get_parallel_corpus()
     googleTranslator = GoogleTranslator()
@@ -29,7 +28,6 @@ class Evaluator:
 #         print('Parsing hebrew text')
 #         print(translated.text)
 # 
-
     
     def evaluate_eng_to_heb(self, heb_sent, eng_sent):
         parser = CKYParser()
@@ -55,3 +53,5 @@ class Evaluator:
         num_of_parameters += numOfSrcNums;
         numOfDstNums = sum(p[0] == 'CD' for p in dst_tag)
         score += numOfDstNums
+        
+        return (score / num_of_parameters) * 100
