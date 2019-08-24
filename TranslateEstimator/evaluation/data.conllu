@@ -1,9 +1,0 @@
-0	1	ויקיפדיה	ויקיפדיה	NNP	NNP	gen=F|gen=M|num=S	1
-1	2	היא	הוא	COP	COP	gen=F|num=S|per=3	2
-2	3	אנציקלופדיה	אנציקלופדיה	NN	NN	gen=F|num=S	3
-3	4	ה	ה	REL	REL	_	4
-4	5	נכתבת	נכתב	BN	BN	gen=F|num=S|per=A	4
-5	6	על	על	IN	IN	_	5
-6	7	ידי	יד	NNT	NNT	gen=F|num=P	6
-7	8	קוראיה.	קוראיה.	NN	NN	gen=M|num=S	7
-

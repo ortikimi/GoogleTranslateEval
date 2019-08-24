@@ -1,11 +1,10 @@
-import csv
-
-from Common.eval_result import EvalResult
 from Wikipedia.wikipedia import get_parallel_corpus
 from cky.ckyParser import CKYParser
 from google_api.translator import GoogleTranslator
 from yap.yapParser import parse
-
+from Common.eval_result import EvalResult
+from nltk.translate.bleu_score import sentence_bleu
+import csv
 
 LIMIT_PARSER = 1
 
@@ -45,6 +44,7 @@ class ProcessEvaluator:
             translated = googleTranslator.translate(original_sentence, self.source_language, self.destination_language)
             result = self.tagging_sentence(original_sentence, translated.text)
             result.set_gold_sentence(gold_text)
+            self.set_bleu_score(gold_text, translated.text, result)
             results.append(result)
 
         self.write_spreadsheet(results)
@@ -105,12 +105,21 @@ class ProcessEvaluator:
             print('***score*****' + (score / num_of_parameters) * 100)
             return (score / num_of_parameters) * 100
 
+    def set_bleu_score(self, gold_sentence, translated_text, result):
+        gold_words = [gold_sentence.split()]
+        translated_words = translated_text.split()
+        score_1ngram = sentence_bleu(gold_words, translated_words, weights=(1, 0, 0, 0))
+        score_2ngram = sentence_bleu(gold_words, translated_words, weights=(0.5, 0.5, 0, 0))
+        result.set_bleu_1ngram_score(format(score_1ngram, '.8f'))
+        result.set_bleu_2ngram_score(format(score_2ngram, '.8f'))
+
     def write_spreadsheet(self, results):
         file_name = 'translated' + self.source_language + '.csv'
         with open(file_name, encoding='utf-16', mode='w') as lang_file:
             results_writer = csv.writer(lang_file, delimiter='\t', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             results_writer.writerow(['Original Sentence', 'Translated Sentence', 'Gold translated Sentence',
-                                      'Hebrew Tagging', 'English Tagging', 'Evaluation Result', 'Blau Result'])
+                                      'Hebrew Tagging', 'English Tagging', 'Evaluation Result', 'Bleu Result 1 ngram', 'Bleu Result 2 ngram'])
             for r in results:
                 results_writer.writerow([r.original_sentence, r.translated_sentence, r.gold_sentence,
-                                        r.hebrew_tag, r.english_tag, r.score, r.blau_score])
+                                        r.hebrew_tag, r.english_tag, r.score, r.bleu_1ngram_score, r.bleu_2ngram_score])
+
