@@ -1,7 +1,10 @@
-import requests
 import json
 
+import requests
+
+
 DATA_FILE = "data.conllu"
+
 
 def parse(sentence):
 
@@ -12,8 +15,8 @@ def parse(sentence):
     data_json = json.dumps(data)
     response = requests.get("http://localhost:8000/yap/heb/joint", data=data_json, headers=headers)
     json_data = json.loads(response.text)
-    #(json_data['ma_lattice'])
-    print(json_data['md_lattice'])
+    # (json_data['ma_lattice'])
+    # print(json_data['md_lattice'])
 
     ''' Parse results and insert relevant tagging into dictionary'''
     with open(DATA_FILE, 'w', encoding='utf-8') as outfile:
