@@ -1,0 +1,11 @@
+0	1	ויקיפדיה	ויקיפדיה	NNP	NNP	gen=F|gen=M|num=S	1
+1	2	היא	הוא	COP	COP	gen=F|num=S|per=3	2
+2	3	אנציקלופדיה	אנציקלופדיה	NN	NN	gen=F|num=S	3
+3	4	חינמית,	חינמית,	NNP	NNP	gen=F|gen=M|num=S	4
+4	5	ש	ש	REL	REL	_	5
+5	6	נכתבה	נכתב	VB	VB	gen=F|num=S|per=3|tense=PAST	5
+6	7	ב	ב	PREPOSITION	PREPOSITION	_	6
+7	8	ה	ה	DEF	DEF	_	6
+8	9	שיתוף	שיתוף	NN	NN	gen=M|num=S	6
+9	10	פעולה.	פעולה.	NNP	NNP	gen=F|gen=M|num=S	7
+

@@ -52,6 +52,7 @@ def print_usage():
     print("Usage:")
     print('python go.py he - translates hebrew sentences to english sentences using exiting corpus.')
     print('python go.py en - translates english sentences to hebrew sentences using exiting corpus.')
+    print('python go.py all translates english sentences to hebrew and vice versa')
     print('python go.py <source_lang> <dest_lang> <sentence> - translates given sentence without gold evaluation')
     print()
 

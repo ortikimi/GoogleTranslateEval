@@ -4,7 +4,8 @@ class EvalResult:
         self.original_sentence = original_sentence
         self.translated_sentence = translated_sentence
         self.score = 0
-        self.blau_score = 0
+        self.bleu_1ngram_score = 0
+        self.bleu_2ngram_score = 0
         self.gold_sentence = ''
         self.hebrew_tag = ''
         self.english_tag = ''
@@ -15,8 +16,11 @@ class EvalResult:
     def set_gold_sentence(self, sentence):
         self.gold_sentence = sentence
 
-    def set_blau_score(self, blau_score):
-        self.blau_score = blau_score
+    def set_bleu_1ngram_score(self, bleu_1ngram_score):
+        self.bleu_1ngram_score = bleu_1ngram_score
+
+    def set_bleu_2ngram_score(self, bleu_2ngram_score):
+        self.bleu_2ngram_score = bleu_2ngram_score
 
     def set_hebrew_tag(self, heb_tag):
         self.hebrew_tag = heb_tag
