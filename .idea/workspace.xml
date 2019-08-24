@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cf32d8e-cf81-4a75-8f01-473efb1d8011" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/TranslateEstimator/Common/eval_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/Common/eval_result.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/go.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/evaluation/go.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TranslateEstimator/evaluation/translateEvaluator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TranslateEstimator/cky/ckyParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/cky/ckyParser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/processEvaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/evaluation/processEvaluator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,25 +16,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="solution.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py">
+      <file leaf-file-name="ckyParser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TranslateEstimator/cky/ckyParser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="101" column="71" lean-forward="true" selection-start-line="101" selection-start-column="71" selection-end-line="101" selection-end-column="71" />
+            <state relative-caret-position="85">
+              <caret line="30" column="92" lean-forward="true" selection-start-line="30" selection-start-column="92" selection-end-line="30" selection-end-column="92" />
               <folding>
-                <element signature="e#0#51#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ckyParser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TranslateEstimator/cky/ckyParser.py">
+      <file leaf-file-name="processEvaluator.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/processEvaluator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="290">
+              <caret line="107" column="101" selection-start-line="107" selection-start-column="101" selection-end-line="107" selection-end-column="101" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#1#52#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -146,6 +147,7 @@
         <option value="$PROJECT_DIR$/TranslateEstimator/evaluation/go.py" />
         <option value="$PROJECT_DIR$/TranslateEstimator/Common/eval_result.py" />
         <option value="$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py" />
+        <option value="$PROJECT_DIR$/TranslateEstimator/evaluation/processEvaluator.py" />
       </list>
     </option>
   </component>
@@ -326,12 +328,12 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32968536" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3474692" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3474692" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -419,16 +421,6 @@
           <url>file://C:/python/Lib/site-packages/pyconll/unit/token.py</url>
           <line>276</line>
           <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py</url>
-          <line>71</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py</url>
-          <line>45</line>
-          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -782,16 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TranslateEstimator/cky/ckyParser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TranslateEstimator/TED/tedTalks.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="55">
@@ -821,10 +803,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="101" column="71" lean-forward="true" selection-start-line="101" selection-start-column="71" selection-end-line="101" selection-end-column="71" />
+        <state relative-caret-position="86">
+          <caret line="93" column="50" lean-forward="true" selection-start-line="93" selection-start-column="50" selection-end-line="93" selection-end-column="50" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TranslateEstimator/cky/ckyParser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="30" column="92" lean-forward="true" selection-start-line="30" selection-start-column="92" selection-end-line="30" selection-end-column="92" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/processEvaluator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="107" column="101" selection-start-line="107" selection-start-column="101" selection-end-line="107" selection-end-column="101" />
+          <folding>
+            <element signature="e#1#52#0" expanded="true" />
           </folding>
         </state>
       </provider>

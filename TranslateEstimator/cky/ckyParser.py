@@ -25,11 +25,11 @@ class CKYParser:
     def createGrammar(self, unkownWords):
         productions = []
         for item in treebank.fileids():
-          for tree in treebank.parsed_sents(item):
-            # perform optional tree transformations, e.g.:
-            tree.collapse_unary(collapsePOS=False)  # Remove branches A-B-C into A-B+C
-            tree.chomsky_normal_form(horzMarkov=2)  # Remove A->(B,C,D) into A->B,C+D->D
-            productions += tree.productions()
+            for tree in treebank.parsed_sents(item):
+                # perform optional tree transformations, e.g.:
+                tree.collapse_unary(collapsePOS=False)  # Remove branches A-B-C into A-B+C
+                tree.chomsky_normal_form(horzMarkov=2)  # Remove A->(B,C,D) into A->B,C+D->D
+                productions += tree.productions()
         for word in unkownWords:
             tag = pos_tag([word])[0][1]
             productions.append(nltk.grammar.Production(Nonterminal(tag), (word,)))

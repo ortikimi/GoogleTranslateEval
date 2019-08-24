@@ -8,9 +8,10 @@ import csv
 
 LIMIT_PARSER = 1
 
-class Evaluator:
 
-    def __init__(self, source_language, destination_language, sentence = None):
+class ProcessEvaluator:
+    
+    def __init__(self, source_language, destination_language, sentence=None):
         self.source_language = source_language
         self.destination_language = destination_language
         self.sentence = sentence
@@ -38,7 +39,7 @@ class Evaluator:
             else:
                 original_sentence = sentence.en_sentence
                 gold_text = sentence.heb_sentence
-            print('Translating %s Text'% self.source_language)
+            print('Translating %s Text' % self.source_language)
             print(original_sentence)
             translated = googleTranslator.translate(original_sentence, self.source_language, self.destination_language)
             result = self.tagging_sentence(original_sentence, translated.text)
@@ -62,7 +63,7 @@ class Evaluator:
             print('Tagging the translated sentence')
             heb_tag = parse(translated_text)
             score = self.evaluate_pos_tagging(eng_tag, heb_tag)
-
+        
         result.set_english_tag(eng_tag)
         result.set_hebrew_tag(heb_tag)
         result.set_eval_score(score)
@@ -86,8 +87,8 @@ class Evaluator:
         num_of_parameters += numOfSrcNums;
         numOfDstNums = sum(p[0] == 'CD' for p in dst_tag)
         score += numOfDstNums
-
-        return score
+        
+        return (score / num_of_parameters) * 100
 
     def set_bleu_score(self, gold_sentence, translated_text, result):
         gold_words = [gold_sentence.split()]
@@ -106,3 +107,4 @@ class Evaluator:
             for r in results:
                 results_writer.writerow([r.original_sentence, r.translated_sentence, r.gold_sentence,
                                         r.hebrew_tag, r.english_tag, r.score, r.bleu_1ngram_score, r.bleu_2ngram_score])
+
