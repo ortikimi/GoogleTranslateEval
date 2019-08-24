@@ -1,12 +1,12 @@
 from sys import argv
-from evaluation.solution import Evaluator
+from evaluation.processEvaluator import ProcessEvaluator
 
 def gohe():
     print()
     print("==========")
     print("Evaluting translation of google translate from Hebrew to English")
     print()
-    eval = Evaluator('he', 'en')
+    eval = ProcessEvaluator('he', 'en')
     eval.evaluate()
 
 def goen():
@@ -14,7 +14,7 @@ def goen():
     print("==========")
     print("Evaluting translation of google translate from English to Hebrew")
     print()
-    eval = Evaluator('en', 'he')
+    eval = ProcessEvaluator('en', 'he')
     eval.evaluate()
 
 def checkInput(source_lang, dest_lang, sentence):
@@ -37,7 +37,7 @@ def goSingleSentence(source_lang, dest_lang, sentence):
     print("==========")
     print("Evaluting translation of a given sentence")
     print()
-    eval = Evaluator(source_lang, dest_lang, sentence)
+    eval = ProcessEvaluator(source_lang, dest_lang, sentence)
     eval.evaluate()
 
 def goall():

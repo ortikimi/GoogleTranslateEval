@@ -41,7 +41,7 @@ class ProcessEvaluator:
                 original_sentence = sentence.en_sentence
                 gold_text = sentence.heb_sentence
             print('Translating %s Text' % self.source_language)
-            print(original_sentence)
+            # print(original_sentence)
             translated = googleTranslator.translate(original_sentence, self.source_language, self.destination_language)
             result = self.tagging_sentence(original_sentence, translated.text)
             result.set_gold_sentence(gold_text)
@@ -72,10 +72,11 @@ class ProcessEvaluator:
     def evaluate_pos_tagging(self, src_tag, dst_tag):
         score = 0
         num_of_parameters = 0;
+        listOfVerbTags = {'en' : ('VB', 'VBD', 'VBG', 'VGN', 'VBP', 'VBZ') , 'he' : ('VB') }
         
-        numOfSrcVerbs = sum(p[0] in ('VB', 'VBD', 'VBG', 'VGN', 'VBP', 'VBZ') for p in src_tag)
+        numOfSrcVerbs = sum(src_tag[key] in listOfVerbTags[self.destination_language] for key in src_tag)
         num_of_parameters += numOfSrcVerbs;
-        numOfDstVerbs = sum(p[0] == 'VB' for p in dst_tag)
+        numOfDstVerbs = sum(item[1] in listOfVerbTags[self.destination_language] for item in dst_tag)
         score += numOfDstVerbs
         
         numOfSrcPronouns = sum(p[0] in ('PRP') for p in src_tag)
@@ -83,12 +84,26 @@ class ProcessEvaluator:
         numOfDstPronouns = sum(p[0] == 'PRP' for p in dst_tag)
         score += numOfDstPronouns
         
+        numOfSrcNames = sum(p[0] in ('NNP') for p in src_tag)
+        num_of_parameters += numOfSrcNames;
+        numOfDstNames = sum(p[0] == '?' for p in dst_tag)
+        score += numOfDstNames
+        
+        numOfSrcCOP = sum(p[0] in ('VBZ') for p in src_tag)
+        num_of_parameters += numOfSrcCOP;
+        numOfDstCOP = sum(p[0] == 'COP' for p in dst_tag)
+        score += numOfDstCOP
+        
         numOfSrcNums = sum(p[0] in ('CD') for p in src_tag)
         num_of_parameters += numOfSrcNums;
         numOfDstNums = sum(p[0] == 'CD' for p in dst_tag)
         score += numOfDstNums
         
-        return (score / num_of_parameters) * 100
+        if(num_of_parameters == 0):
+            return 0
+        else: 
+            print('***score*****' + (score / num_of_parameters) * 100)
+            return (score / num_of_parameters) * 100
 
     def write_spreadsheet(self, results):
         file_name = 'translated' + self.source_language + '.csv'

@@ -13,7 +13,7 @@ def parse(sentence):
     response = requests.get("http://localhost:8000/yap/heb/joint", data=data_json, headers=headers)
     json_data = json.loads(response.text)
     #(json_data['ma_lattice'])
-    print(json_data['md_lattice'])
+    #print(json_data['md_lattice'])
 
     ''' Parse results and insert relevant tagging into dictionary'''
     with open(DATA_FILE, 'w', encoding='utf-8') as outfile:
@@ -26,5 +26,5 @@ def parse(sentence):
             fields = line.split()
             if fields[2] not in tagging_dict:
                 tagging_dict[fields[2]] = fields[4]
-    print(tagging_dict)
+#     print(tagging_dict)
     return tagging_dict
