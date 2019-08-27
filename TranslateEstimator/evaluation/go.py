@@ -65,7 +65,8 @@ if len(argv) == 2:
         goen()
     elif argv[1] == 'all':
         goall()
-elif len(argv) == 4:
-    goSingleSentence(argv[1], argv[2], argv[3])
+elif len(argv) > 2:
+    sentence = " ".join(argv[3::])
+    goSingleSentence(argv[1], argv[2], sentence)
 else:
     print_usage()

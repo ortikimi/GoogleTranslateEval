@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cf32d8e-cf81-4a75-8f01-473efb1d8011" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/TranslateEstimator/evaluation/translateEvaluator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateEstimator/cky/ckyParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/cky/ckyParser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/processEvaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/evaluation/processEvaluator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/data.conllu" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/evaluation/data.conllu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/go.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/evaluation/go.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +30,8 @@
       <file leaf-file-name="processEvaluator.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/processEvaluator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="107" column="101" selection-start-line="107" selection-start-column="101" selection-end-line="107" selection-end-column="101" />
+            <state relative-caret-position="17">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
               <folding>
                 <element signature="e#1#52#0" expanded="true" />
               </folding>
@@ -43,11 +42,20 @@
       <file leaf-file-name="go.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/go.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="230">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/python/Lib/codecs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="309" selection-start-line="309" selection-end-line="309" />
             </state>
           </provider>
         </entry>
@@ -85,8 +93,8 @@
       <file leaf-file-name="yapParser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TranslateEstimator/yap/yapParser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="273">
+              <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -99,15 +107,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="123">
               <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sentence.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/python/Lib/site-packages/pyconll/unit/sentence.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="74" selection-start-line="74" selection-end-line="74" />
             </state>
           </provider>
         </entry>
@@ -143,11 +142,11 @@
         <option value="$PROJECT_DIR$/TranslateEstimator/TED/tedTalks.py" />
         <option value="$PROJECT_DIR$/TranslateEstimator/Common/multi_lingual_sentence.py" />
         <option value="$PROJECT_DIR$/TranslateEstimator/Wikipedia/wikipedia.py" />
-        <option value="$PROJECT_DIR$/TranslateEstimator/yap/yapParser.py" />
-        <option value="$PROJECT_DIR$/TranslateEstimator/evaluation/go.py" />
         <option value="$PROJECT_DIR$/TranslateEstimator/Common/eval_result.py" />
         <option value="$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py" />
         <option value="$PROJECT_DIR$/TranslateEstimator/evaluation/processEvaluator.py" />
+        <option value="$PROJECT_DIR$/TranslateEstimator/yap/yapParser.py" />
+        <option value="$PROJECT_DIR$/TranslateEstimator/evaluation/go.py" />
       </list>
     </option>
   </component>
@@ -250,7 +249,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.go">
+  <component name="RunManager" selected="Python.go1">
     <configuration name="cky" type="PythonConfigurationType" factoryName="Python">
       <module name="googletranslateeval" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -282,7 +281,25 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TranslateEstimator/evaluation/go.py" />
-      <option name="PARAMETERS" value="all" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="go1" type="PythonConfigurationType" factoryName="Python">
+      <module name="googletranslateeval" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\python\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TranslateEstimator/evaluation" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TranslateEstimator/evaluation/go.py" />
+      <option name="PARAMETERS" value="he en אני רוצה לישון" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -306,6 +323,7 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
+      <item itemvalue="Python.go1" />
       <item itemvalue="Python.googleEval" />
       <item itemvalue="Python.go" />
       <item itemvalue="Python.cky" />
@@ -333,11 +351,11 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32968536" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3474692" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3474692" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.56908345" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.56908345" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -348,7 +366,7 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.55266756" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3474692" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -422,6 +440,11 @@
           <line>276</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/TranslateEstimator/evaluation/go.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -430,17 +453,10 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="59" />
+      <option name="time" value="61" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TranslateEstimator/google_api/translator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -757,16 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TranslateEstimator/yap/yapParser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TranslateEstimator/Common/multi_lingual_sentence.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -780,16 +786,6 @@
           <caret line="26" column="41" lean-forward="true" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/go.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -821,10 +817,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TranslateEstimator/yap/yapParser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/go.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/python/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/processEvaluator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="107" column="101" selection-start-line="107" selection-start-column="101" selection-end-line="107" selection-end-column="101" />
+        <state relative-caret-position="17">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
           <folding>
             <element signature="e#1#52#0" expanded="true" />
           </folding>
