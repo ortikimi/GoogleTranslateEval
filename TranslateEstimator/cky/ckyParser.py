@@ -37,25 +37,30 @@ class CKYParser:
         grammar = induce_pcfg(S, productions)
         return grammar
 
-    def parseSentence(self, sent):
+    def parseSentence(self, sentences):
         
         grammar = self.createGrammar(set())
-                
-        # Tokenize the sentence.
-        words = sent.split()
+        list_of_unknown_words = []
+        parses = []
+        for sent in sentences:        
+            # Tokenize the sentence.
+            words = sent.split()
+            list_of_unknown_words.append(self.get_missing_words(grammar, words))
         
-        unknown_words = self.get_missing_words(grammar, words);
-        
-        if(unknown_words != []):
+        if(list_of_unknown_words != []):
+            unknown_words = [item for sublist in list_of_unknown_words for item in sublist]
+            
             grammar = self.createGrammar(unknown_words)
         # Define a list of parsers.  We'll use all parsers.
         parser = ViterbiParser(grammar)
         
-        #print('\ns: %s\nparser: %s\ngrammar: %s' % (sent, parser, grammar))
-        #parser.trace(3)
-        parses = parser.parse_all(words)
+        i=1
+        for sent in sentences:
+            words = sent.split()   
+            currentParse = parser.parse_all(words)
+            print('*******'+str(i))
+            print(currentParse[-1].pos())
+            parses.append(currentParse[-1].pos())
+            i+=1
         
-        for parse in parses:
-            print(parse)
-        
-        return parse.pos()
+        return parses

@@ -1,57 +1,101 @@
-from Wikipedia.wikipedia import get_parallel_corpus
-from cky.ckyParser import CKYParser
-from google_api.translator import GoogleTranslator
-from yap.yapParser import parse
-
-LIMIT_PARSER = 1
 
 
 class TranslateEvaluator:
 
-    multi_lingual_sentences = get_parallel_corpus()
-    googleTranslator = GoogleTranslator()
-    parser = CKYParser()
-
-    count = 0
-
-    for sentence in multi_lingual_sentences:
-        if (count == LIMIT_PARSER):
-            print('finish')
-            break
-        count += 1
-        translated = googleTranslator.translate(sentence.en_sentence, 'en', 'he')
-        print('Translating English Text')
-        print(sentence.en_sentence)
-        print('Tagging the givern sentence')
-        eng_tag = parser.parseSentence(sentence.en_sentence)
-        print(eng_tag)
-#         print('Parsing hebrew text')
-#         print(translated.text)
-# 
-    
-    def evaluate_eng_to_heb(self, heb_sent, eng_sent):
-        parser = CKYParser()
-        eng_tag = parser.parseSentence(eng_sent)
-        heb_tag = []  # cky_of_an_hebrew_sentence(eng_sent)
-        self.evaluate_pos_tagging(eng_tag, heb_tag)
+    def __init__(self, source_language, destination_language):
+        self.source_language = source_language
+        self.destination_language = destination_language
      
-    def evaluate_pos_tagging(self, src_tag, dst_tag):
-        score = 0
-        num_of_parameters = 0;
+    def evaluate_pos_tagging(self, src_tags, dst_tags):
+        eval_of_dst = 0
+        eval_of_src = 0;
+        listOfTags = [
+            {
+                'Tag':'VERB',
+                'Weight': 1,
+                'en': ('VB', 'VBD', 'VBG', 'VGN'),
+                'he' : ('BN')
+                },
+            {
+                'Tag':'PRONOUN',
+                'Weight': 0.5,
+                'en': ('PRP'),
+                'he' : ('PRP')
+                },
+            {
+                'Tag':'NAME',
+                'Weight': 1,
+                'en': ('NNP'),
+                'he' : ('NNP')
+                },
+            {
+                'Tag':'COP',
+                'Weight': 0.5,
+                'en': ('VBZ,VBP'),
+                'he' : ('COP')
+                },
+            {
+                'Tag':'DET',
+                'Weight': 0.1,
+                'en': ('DET'),
+                'he' : ('DEF')
+                },
+            {
+                'Tag':'NUMBER',
+                'Weight': 1,
+                'en': ('CD'),
+                'he' : ('?')
+                },
+            {
+                'Tag':'SYMBOL',
+                'Weight': 1,
+                'en': ('SYM'),
+                'he' : ('?')
+                },
+            {
+                'Tag':'TO',
+                'Weight': 0.1,
+                'en': ('TO'),
+                'he' : ('?')
+                },
+            {
+                'Tag':'NOUN',
+                'Weight': 0.2,
+                'en': ('NN'),
+                'he' : ('NN')
+                },
+            {
+                'Tag':'ADJECTIVE',
+                'Weight': 0.2,
+                'en': ('JJ'),
+                'he' : ('JJ')
+                },
+            {
+                'Tag':'OF',
+                'Weight': 0.1,
+                'en': ('IN'),
+                'he' : ('POS')
+                },
+            {
+                'Tag':'AND',
+                'Weight': 0.1,
+                'en': ('CC'),
+                'he' : ('CONJ')
+                }
+        ]
         
-        numOfSrcVerbs = sum(p[0] in ('VB', 'VBD', 'VBG', 'VGN', 'VBP', 'VBZ') for p in src_tag)
-        num_of_parameters += numOfSrcVerbs;
-        numOfDstVerbs = sum(p[0] == 'VB' for p in dst_tag)
-        score += numOfDstVerbs
+        for tag in listOfTags:
+            numOfSrcTags = sum(item[1] in tag[self.source_language] for item in src_tags)
+            eval_of_src += tag['Weight'] * numOfSrcTags
+            numOfDstTags = sum(item[1] in tag[self.destination_language] for item in dst_tags)
+            eval_of_dst += tag['Weight'] * numOfDstTags
         
-        numOfSrcPronouns = sum(p[0] in ('PRP') for p in src_tag)
-        num_of_parameters += numOfSrcPronouns;
-        numOfDstPronouns = sum(p[0] == 'PRP' for p in dst_tag)
-        score += numOfDstPronouns
-        
-        numOfSrcNums = sum(p[0] in ('CD') for p in src_tag)
-        num_of_parameters += numOfSrcNums;
-        numOfDstNums = sum(p[0] == 'CD' for p in dst_tag)
-        score += numOfDstNums
-        
-        return (score / num_of_parameters) * 100
+        if(eval_of_src == 0 or eval_of_dst == 0):
+            return 0
+        else: 
+            print('***eval_of_dst*****')
+            if (eval_of_src < eval_of_dst):
+                return eval_of_src / eval_of_dst
+            else:
+                return eval_of_dst / eval_of_src
+

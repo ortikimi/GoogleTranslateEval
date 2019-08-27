@@ -29,4 +29,4 @@ def parse(sentence):
             fields = line.split()
             tuple = [fields[2], fields[4]]
             tagging_list.append(tuple)
-    print(tagging_list)
+    return tagging_list
