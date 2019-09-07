@@ -5,12 +5,11 @@ from Common.eval_result import EvalResult
 from Wikipedia.wikipedia import get_parallel_corpus
 from evaluation.translateEvaluator import TranslateEvaluator
 from google_api.translator import GoogleTranslator
-import matplotlib.pyplot as plt
 from tagging.tagger import Tagger
 from evaluation.spredsheet_results import SpredSheetResults
 
 
-LIMIT_PARSER = 50
+LIMIT_PARSER = 30
 
 
 class Solution:
@@ -72,7 +71,7 @@ class Solution:
             self.set_bleu_score(gold_sentences[idx], translated_sentences[idx], result)
             results.append(result)
 
-        spredsheets_result.write_spreadsheet(results)
+        spredsheets_result.write_spreadsheet(results, self.source_language)
         spredsheets_result.draw_graph()
     
     def set_bleu_score(self, gold_sentence, translated_text, result):

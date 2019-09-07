@@ -9,8 +9,8 @@ class SpredSheetResults():
         self.bleu_1gram = []
         self.bleu_2gram = []
 
-    def write_spreadsheet(self, results):
-        self.file_name = 'translated' + self.source_language + '.csv'
+    def write_spreadsheet(self, results, source_language):
+        self.file_name = 'translated' + source_language + '.csv'
         with open(self.file_name, encoding='utf-16', mode='w') as lang_file:
             results_writer = csv.writer(lang_file, delimiter='\t', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             results_writer.writerow(['Original Sentence', 'Translated Sentence', 'Gold translated Sentence',
@@ -18,7 +18,7 @@ class SpredSheetResults():
                                       'Gold Evaluation Result' 'Bleu Result 1 ngram', 'Bleu Result 2 ngram'])
             for r in results:
                 results_writer.writerow([r.original_sentence, r.translated_sentence, r.gold_sentence,
-                                         r.hebrew_tag, r.english_tag, r.score, r,gold_score,
+                                         r.hebrew_tag, r.english_tag, r.score, r.gold_score,
                                          r.bleu_1ngram_score, r.bleu_2ngram_score])
 
     def get_data_from_csv(self):
@@ -52,13 +52,12 @@ class SpredSheetResults():
         plt.ylabel('Evaluation')
         plt.show()
 
-    def draw_gold_graph(self, file_name):
-        # Plot the data
+    def draw_gold_graph(self):
         plt.plot(self.gold_evaluator, label='Gold Evaluator')
 
         # Add a legend
         plt.legend()
-        plt.title('Compare between Bleu and Google Evaluator')
+        plt.title('Gold Evaluation')
         plt.xlabel('Sentences')
         plt.ylabel('Evaluation')
         plt.show()
