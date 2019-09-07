@@ -1,0 +1,21 @@
+0	1	ב	ב	PREPOSITION	PREPOSITION	_	1
+1	2	ה	ה	DEF	DEF	_	1
+2	3	מסורת	מסורת	NN	NN	gen=F|num=S	1
+3	4	ה	ה	DEF	DEF	_	2
+4	5	יהודית	יהודי	JJ	JJ	gen=F|num=S	2
+5	6	מתוארכת	תוארך	BN	BN	gen=F|num=S|per=A	3
+6	7	תחילת	תחילה	NNT	NNT	gen=F|num=S	4
+7	8	ה	ה	DEF	DEF	_	5
+8	9	גלות	גלות	NN	NN	gen=F|num=S	5
+9	10	ל	ל	PREPOSITION	PREPOSITION	_	6
+10	11	זמן	זמן	NNT	NNT	gen=M|num=S	6
+11	12	חורבן	חורבן	NNT	NNT	gen=M|num=S	7
+12	13	בית	בית	NNT	NNT	gen=M|num=S	8
+13	14	ה	ה	DEF	DEF	_	9
+14	15	מקדש	מקדש	NN	NN	gen=M|num=S	9
+15	16	ה	ה	DEF	DEF	_	10
+16	17	שני	שני	CD	CD	gen=M|num=S	10
+17	18	ב	ב	PREPOSITION	PREPOSITION	_	11
+18	19	שנת	שינה	NNT	NNT	gen=F|num=S	11
+19	20	70.	_	NCD	NCD	_	12
+
