@@ -49,17 +49,20 @@ class Solution:
                 tagged_src_sentences = tagger.tag_heb_sentences(src_sentences)
                 translated_sentences = list(map(lambda sent : googleTranslator.translate(sent).text, src_sentences))
                 tagged_translated_sentences = tagger.tag_eng_sentences(translated_sentences)
+                tagged_gold_sentences = tagger.tag_eng_sentences(gold_sentences)
             else:
                 src_sentences = eng_sentences
                 gold_sentences = heb_sentences
                 tagged_src_sentences = tagger.tag_eng_sentences(src_sentences)
                 translated_sentences = list(map(lambda sent : googleTranslator.translate(sent).text, src_sentences))    
                 tagged_translated_sentences = tagger.tag_heb_sentences(translated_sentences)
+                tagged_gold_sentences = tagger.tag_heb_sentences(gold_sentences)
             
         for idx, tagged_sent in enumerate(tagged_src_sentences):
             result = EvalResult(src_sentences[idx], translated_sentences[idx])
             result.set_eval_score(evaluator.evaluate_pos_tagging(tagged_sent, tagged_translated_sentences[idx]))
             result.set_gold_sentence(gold_sentences[idx])
+            result.set_gold_score(evaluator.evaluate_pos_tagging(tagged_sent, tagged_gold_sentences[idx]))
             if (self.source_language == 'he'):
                 result.set_english_tag(tagged_translated_sentences[idx])
                 result.set_hebrew_tag(tagged_sent)
