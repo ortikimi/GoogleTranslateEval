@@ -6,7 +6,10 @@ class Tagger:
     
     def tag_eng_sentences(self, eng_sentences):
         eng_parser = CKYParser()
-        return eng_parser.parseSentence(eng_sentences)
+        parsed_sentences = []
+        for sent in eng_sentences:
+            parsed_sentences.append(eng_parser.parseSentence(sent))
+        return parsed_sentences
             
     def tag_heb_sentences(self, heb_sentences):
         parsed_sentences = []

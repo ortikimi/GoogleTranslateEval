@@ -13,7 +13,7 @@ class TranslateEvaluator:
             {
                 'Tag':'VERB',
                 'Weight': 1,
-                'en': ('VB', 'VBD', 'VBG', 'VGN'),
+                'en': ('VB','VBD','VBG','VBN'),
                 'he' : ('BN')
                 },
             {
@@ -25,7 +25,7 @@ class TranslateEvaluator:
             {
                 'Tag':'NAME',
                 'Weight': 1,
-                'en': ('NNP'),
+                'en': ('NNP','NNPS'),
                 'he' : ('NNP')
                 },
             {
@@ -37,31 +37,19 @@ class TranslateEvaluator:
             {
                 'Tag':'DET',
                 'Weight': 0.1,
-                'en': ('DET'),
-                'he' : ('DEF')
+                'en': ('DT'),
+                'he' : ('REL','DEF')
                 },
             {
                 'Tag':'NUMBER',
                 'Weight': 1,
                 'en': ('CD'),
-                'he' : ('?')
-                },
-            {
-                'Tag':'SYMBOL',
-                'Weight': 1,
-                'en': ('SYM'),
-                'he' : ('?')
-                },
-            {
-                'Tag':'TO',
-                'Weight': 0.1,
-                'en': ('TO'),
-                'he' : ('?')
+                'he' : ('NCD')
                 },
             {
                 'Tag':'NOUN',
                 'Weight': 0.2,
-                'en': ('NN'),
+                'en': ('NN','NNS'),
                 'he' : ('NN')
                 },
             {
@@ -71,10 +59,10 @@ class TranslateEvaluator:
                 'he' : ('JJ')
                 },
             {
-                'Tag':'OF',
+                'Tag':'ADP',
                 'Weight': 0.1,
                 'en': ('IN'),
-                'he' : ('POS')
+                'he' : ('IN','POS')
                 },
             {
                 'Tag':'AND',

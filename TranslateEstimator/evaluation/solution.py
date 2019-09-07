@@ -9,8 +9,7 @@ from evaluation.translateEvaluator import TranslateEvaluator
 from google_api.translator import GoogleTranslator
 from tagging.tagger import Tagger
 
-LIMIT_PARSER = 1
-
+LIMIT_PARSER = 200
 
 class Solution:
     
