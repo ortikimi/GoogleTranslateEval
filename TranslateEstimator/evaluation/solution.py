@@ -3,11 +3,10 @@ from nltk.translate.bleu_score import sentence_bleu
 
 from Common.eval_result import EvalResult
 from Wikipedia.wikipedia import get_parallel_corpus
+from evaluation.spredsheet_results import SpredSheetResults
 from evaluation.translateEvaluator import TranslateEvaluator
 from google_api.translator import GoogleTranslator
 from tagging.tagger import Tagger
-from evaluation.spredsheet_results import SpredSheetResults
-
 
 LIMIT_PARSER = 30
 
