@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5cf32d8e-cf81-4a75-8f01-473efb1d8011" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateEstimator/Common/eval_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/Common/eval_result.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/spredsheet_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/evaluation/spredsheet_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/translatedhe.csv" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/evaluation/translatedhe.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="64" column="58" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="58" />
+              <caret line="63" column="58" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
               <folding>
                 <element signature="e#1#52#0" expanded="true" />
               </folding>
@@ -64,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spredsheet_results.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="spredsheet_results.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/spredsheet_results.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+            <state relative-caret-position="289">
+              <caret line="17" column="64" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -85,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="eval_result.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="eval_result.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TranslateEstimator/Common/eval_result.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+            <state relative-caret-position="165">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -129,8 +126,8 @@
         <option value="$PROJECT_DIR$/TranslateEstimator/yap/yapParser.py" />
         <option value="$PROJECT_DIR$/TranslateEstimator/evaluation/go.py" />
         <option value="$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py" />
-        <option value="$PROJECT_DIR$/TranslateEstimator/evaluation/spredsheet_results.py" />
         <option value="$PROJECT_DIR$/TranslateEstimator/Common/eval_result.py" />
+        <option value="$PROJECT_DIR$/TranslateEstimator/evaluation/spredsheet_results.py" />
       </list>
     </option>
   </component>
@@ -177,12 +174,6 @@
               <item name="googletranslateeval" type="b2602c69:ProjectViewProjectNode" />
               <item name="googletranslateeval" type="462c0819:PsiDirectoryNode" />
               <item name="TranslateEstimator" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="googletranslateeval" type="b2602c69:ProjectViewProjectNode" />
-              <item name="googletranslateeval" type="462c0819:PsiDirectoryNode" />
-              <item name="TranslateEstimator" type="462c0819:PsiDirectoryNode" />
               <item name="evaluation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -202,12 +193,6 @@
               <item name="googletranslateeval" type="462c0819:PsiDirectoryNode" />
               <item name="TranslateEstimator" type="462c0819:PsiDirectoryNode" />
               <item name="TED" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="googletranslateeval" type="b2602c69:ProjectViewProjectNode" />
-              <item name="googletranslateeval" type="462c0819:PsiDirectoryNode" />
-              <item name="TranslateEstimator" type="462c0819:PsiDirectoryNode" />
-              <item name="training" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="googletranslateeval" type="b2602c69:ProjectViewProjectNode" />
@@ -666,13 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TranslateEstimator/google_api/translator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="7" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/python/Lib/urllib/request.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10608">
@@ -777,10 +755,24 @@
     <entry file="file://$PROJECT_DIR$/TranslateEstimator/data/heb-ctrees.train">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/TranslateEstimator/Common/eval_result.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TranslateEstimator/google_api/translator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="7" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="64" column="58" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="58" />
+          <caret line="63" column="58" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
           <folding>
             <element signature="e#1#52#0" expanded="true" />
           </folding>
@@ -789,18 +781,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/spredsheet_results.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+        <state relative-caret-position="289">
+          <caret line="17" column="64" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TranslateEstimator/Common/eval_result.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
         </state>
       </provider>
     </entry>
