@@ -1,6 +1,3 @@
-import csv
-import matplotlib.pyplot as plt
-
 from nltk.translate.bleu_score import sentence_bleu
 
 from Common.eval_result import EvalResult
@@ -8,6 +5,7 @@ from Wikipedia.wikipedia import get_parallel_corpus
 from evaluation.translateEvaluator import TranslateEvaluator
 from google_api.translator import GoogleTranslator
 from tagging.tagger import Tagger
+from evaluation.spredsheet_results import SpredSheetResults
 
 LIMIT_PARSER = 200
 
@@ -22,6 +20,7 @@ class Solution:
         googleTranslator = GoogleTranslator(self.source_language, self.destination_language)
         evaluator = TranslateEvaluator(self.source_language, self.destination_language)
         tagger = Tagger()
+        spredsheets_result = SpredSheetResults()
         results = []
 
         # If we recieved only one sentence
@@ -62,7 +61,8 @@ class Solution:
                     self.set_bleu_score(heb_sentences[idx], translated_sentences[idx], result)
                 results.append(result)
 
-        self.write_spreadsheet(results)
+        spredsheets_result.write_spreadsheet(results)
+        spredsheets_result.draw_graph()
     
     def set_bleu_score(self, gold_sentence, translated_text, result):
         gold_words = [gold_sentence.split()]
@@ -72,42 +72,4 @@ class Solution:
         result.set_bleu_1ngram_score(format(score_1ngram, '.8f'))
         result.set_bleu_2ngram_score(format(score_2ngram, '.8f'))
 
-    def write_spreadsheet(self, results):
-        file_name = 'translated' + self.source_language + '.csv'
-        with open(file_name, encoding='utf-16', mode='w') as lang_file:
-            results_writer = csv.writer(lang_file, delimiter='\t', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-            results_writer.writerow(['Original Sentence', 'Translated Sentence', 'Gold translated Sentence',
-                                      'Hebrew Tagging', 'English Tagging', 'Evaluation Result', 'Bleu Result 1 ngram', 'Bleu Result 2 ngram'])
-            for r in results:
-                results_writer.writerow([r.original_sentence, r.translated_sentence, r.gold_sentence,
-                                        r.hebrew_tag, r.english_tag, r.score, r.bleu_1ngram_score, r.bleu_2ngram_score])
 
-        self.draw_graph(file_name)
-
-    def draw_graph(self, file_name):
-        google_evaluator = []
-        bleu_1gram = []
-        bleu_2gram = []
-        with open(file_name, encoding='utf-16', mode='r') as csvfile:
-            plots = list(csv.reader(csvfile, delimiter='\t'))
-            for row in plots:
-                if len(row) > 0:
-                    try:
-                        google_evaluator.append(float(row[5]))
-                        bleu_1gram.append(float(row[6]))
-                        bleu_2gram.append(float(row[7]))
-                    except ValueError:
-                        print()
-
-
-        # Plot the data
-        plt.plot(google_evaluator, label='Google Evaluator')
-        plt.plot(bleu_1gram,  label='Bleu 1-ngram')
-        plt.plot(bleu_2gram,  label='Bleu 2-ngram')
-
-        # Add a legend
-        plt.legend()
-        plt.title('Compare between Bleu and Google Evaluator')
-        plt.xlabel('Sentences')
-        plt.ylabel('Evaluation')
-        plt.show()
