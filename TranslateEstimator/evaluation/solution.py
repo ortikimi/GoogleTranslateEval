@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from tagging.tagger import Tagger
 
 
-LIMIT_PARSER = 10
+LIMIT_PARSER = 50
 
 
 class Solution:
@@ -29,14 +29,14 @@ class Solution:
         # If we recieved only one sentence
         if (self.sentence != None):
             src_sentences = [self.sentence]
-            dst_sentences = [' ']
             translated_sentences = [googleTranslator.translate(self.sentence).text]
+            gold_sentences = [' ']
             if (self.source_language == 'he'):
                 tagged_src_sentences = tagger.tag_heb_sentences(src_sentences)
-                tagged_dst_sentences = tagger.tag_eng_sentences(translated_sentences)
+                tagged_translated_sentences = tagger.tag_eng_sentences(translated_sentences)
             else:
                 tagged_src_sentences = tagger.tag_eng_sentences(src_sentences)
-                tagged_dst_sentences = tagger.tag_heb_sentences(translated_sentences)
+                tagged_translated_sentences = tagger.tag_heb_sentences(translated_sentences)
         # Else parse all the sentences
         else:
             multi_lingual_sentences = get_parallel_corpus()[:LIMIT_PARSER]
@@ -44,28 +44,28 @@ class Solution:
             eng_sentences = list(map(lambda sent:  sent.en_sentence, multi_lingual_sentences))
             if (self.source_language == 'he'):
                 src_sentences = heb_sentences
-                dst_sentences = eng_sentences
-                tagged_src_sentences = tagger.tag_heb_sentences(heb_sentences)
-                translated_sentences = list(map(lambda sent : googleTranslator.translate(sent).text, heb_sentences))
-                tagged_dst_sentences = tagger.tag_eng_sentences(translated_sentences)
+                gold_sentences = eng_sentences
+                tagged_src_sentences = tagger.tag_heb_sentences(src_sentences)
+                translated_sentences = list(map(lambda sent : googleTranslator.translate(sent).text, src_sentences))
+                tagged_translated_sentences = tagger.tag_eng_sentences(translated_sentences)
             else:
                 src_sentences = eng_sentences
-                dst_sentences = heb_sentences
-                tagged_src_sentences = tagger.tag_eng_sentences(eng_sentences)
-                translated_sentences = list(map(lambda sent : googleTranslator.translate(sent).text, eng_sentences))    
-                tagged_dst_sentences = tagger.tag_heb_sentences(translated_sentences)
+                gold_sentences = heb_sentences
+                tagged_src_sentences = tagger.tag_eng_sentences(src_sentences)
+                translated_sentences = list(map(lambda sent : googleTranslator.translate(sent).text, src_sentences))    
+                tagged_translated_sentences = tagger.tag_heb_sentences(translated_sentences)
             
         for idx, tagged_sent in enumerate(tagged_src_sentences):
             result = EvalResult(src_sentences[idx], translated_sentences[idx])
-            result.set_eval_score(evaluator.evaluate_pos_tagging(tagged_sent, tagged_dst_sentences[idx]))
-            result.set_gold_sentence(dst_sentences[idx])
+            result.set_eval_score(evaluator.evaluate_pos_tagging(tagged_sent, tagged_translated_sentences[idx]))
+            result.set_gold_sentence(gold_sentences[idx])
             if (self.source_language == 'he'):
-                result.set_english_tag(tagged_dst_sentences[idx])
+                result.set_english_tag(tagged_translated_sentences[idx])
                 result.set_hebrew_tag(tagged_sent)
             else:
                 result.set_english_tag(tagged_sent)
-                result.set_hebrew_tag(tagged_dst_sentences[idx])
-            self.set_bleu_score(dst_sentences[idx], translated_sentences[idx], result)
+                result.set_hebrew_tag(tagged_translated_sentences[idx])
+            self.set_bleu_score(gold_sentences[idx], translated_sentences[idx], result)
             results.append(result)
 
         self.write_spreadsheet(results)
