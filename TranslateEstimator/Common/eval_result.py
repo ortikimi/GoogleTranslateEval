@@ -10,6 +10,7 @@ class EvalResult:
         self.gold_sentence = ''
         self.hebrew_tag = ''
         self.english_tag = ''
+        self.gold_tag = ''
 
     def set_eval_score(self, score):
         self.score = score
@@ -31,4 +32,7 @@ class EvalResult:
 
     def set_english_tag(self, en_tag):
         self.english_tag = en_tag
+
+    def set_gold_tag(self, gold_tag):
+        self.gold_tag = gold_tag
 

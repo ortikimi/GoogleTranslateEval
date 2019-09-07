@@ -62,6 +62,7 @@ class Solution:
             result.set_eval_score(evaluator.evaluate_pos_tagging(tagged_sent, tagged_translated_sentences[idx]))
             result.set_gold_sentence(gold_sentences[idx])
             result.set_gold_score(evaluator.evaluate_pos_tagging(tagged_sent, tagged_gold_sentences[idx]))
+            result.set_gold_tag(tagged_gold_sentences[idx])
             if (self.source_language == 'he'):
                 result.set_english_tag(tagged_translated_sentences[idx])
                 result.set_hebrew_tag(tagged_sent)
