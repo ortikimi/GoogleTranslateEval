@@ -50,7 +50,7 @@ class TranslateEvaluator:
                 'Tag':'NOUN',
                 'Weight': 0.2,
                 'en': ('NN','NNS'),
-                'he' : ('NN')
+                'he' : ('NN, NNT')
                 },
             {
                 'Tag':'ADJECTIVE',
