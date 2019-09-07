@@ -1,4 +1,5 @@
 import csv
+import matplotlib.pyplot as plt
 
 from nltk.translate.bleu_score import sentence_bleu
 
@@ -8,8 +9,7 @@ from evaluation.translateEvaluator import TranslateEvaluator
 from google_api.translator import GoogleTranslator
 from tagging.tagger import Tagger
 
-
-LIMIT_PARSER = 5
+LIMIT_PARSER = 1
 
 
 class Solution:
@@ -83,3 +83,32 @@ class Solution:
                 results_writer.writerow([r.original_sentence, r.translated_sentence, r.gold_sentence,
                                         r.hebrew_tag, r.english_tag, r.score, r.bleu_1ngram_score, r.bleu_2ngram_score])
 
+        self.draw_graph(file_name)
+
+    def draw_graph(self, file_name):
+        google_evaluator = []
+        bleu_1gram = []
+        bleu_2gram = []
+        with open(file_name, encoding='utf-16', mode='r') as csvfile:
+            plots = list(csv.reader(csvfile, delimiter='\t'))
+            for row in plots:
+                if len(row) > 0:
+                    try:
+                        google_evaluator.append(float(row[5]))
+                        bleu_1gram.append(float(row[6]))
+                        bleu_2gram.append(float(row[7]))
+                    except ValueError:
+                        print()
+
+
+        # Plot the data
+        plt.plot(google_evaluator, label='Google Evaluator')
+        plt.plot(bleu_1gram,  label='Bleu 1-ngram')
+        plt.plot(bleu_2gram,  label='Bleu 2-ngram')
+
+        # Add a legend
+        plt.legend()
+        plt.title('Compare between Bleu and Google Evaluator')
+        plt.xlabel('Sentences')
+        plt.ylabel('Evaluation')
+        plt.show()
