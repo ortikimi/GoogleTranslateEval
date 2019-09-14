@@ -2,7 +2,7 @@
 from nltk.translate.bleu_score import sentence_bleu
 
 from Common.eval_result import EvalResult
-from Wikipedia.wikipedia import get_parallel_corpus
+from TED.tedTalksCSV import get_parallel_corpus
 from evaluation.spredsheet_results import SpredSheetResults
 from evaluation.translateEvaluator import TranslateEvaluator
 from google_api.translator import GoogleTranslator
@@ -13,10 +13,11 @@ LIMIT_PARSER = 30
 
 class Solution:
     
-    def __init__(self, source_language, destination_language, sentence=None):
+    def __init__(self, source_language, destination_language, optimize=False, sentence=None):
         self.source_language = source_language
         self.destination_language = destination_language
         self.sentence = sentence
+        self.optimize = optimize
 
     def evaluate(self):
         googleTranslator = GoogleTranslator(self.source_language, self.destination_language)
@@ -26,7 +27,9 @@ class Solution:
         results = []
 
         # If we recieved only one sentence
-        if (self.sentence != None):
+        if (self.optimize):
+            print('optimize')
+        elif (self.sentence != None):
             src_sentences = [self.sentence]
             translated_sentences = [googleTranslator.translate(self.sentence).text]
             gold_sentences = [' ']

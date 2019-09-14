@@ -4,6 +4,8 @@ import urllib
 import csv
 import os
 
+''' For Future work, working directly with TED talks'''
+
 TED_FILE = 'ted_talks.csv'
 
 def get_parallel_corpus():

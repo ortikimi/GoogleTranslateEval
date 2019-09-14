@@ -1,20 +1,20 @@
 from sys import argv
 from evaluation.solution import Solution
 
-def gohe():
+def gohe(optimize=False):
     print()
     print("==========")
     print("Evaluting translation of google translate from Hebrew to English")
     print()
-    eval = Solution('he', 'en')
+    eval = Solution('he', 'en', optimize)
     eval.evaluate()
 
-def goen():
+def goen(optimize=False):
     print()
     print("==========")
     print("Evaluting translation of google translate from English to Hebrew")
     print()
-    eval = Solution('en', 'he')
+    eval = Solution('en', 'he', optimize)
     eval.evaluate()
 
 def checkInput(source_lang, dest_lang, sentence):
@@ -47,6 +47,13 @@ def goall():
     gohe()
     goen()
 
+def gooptimize():
+    print()
+    print("==========")
+    print("Translating from Hebrew to English and vice versa with optimized tagging.")
+    gohe(True)
+    goen(True)
+
 def print_usage():
     print()
     print("Usage:")
@@ -65,6 +72,8 @@ if len(argv) == 2:
         goen()
     elif argv[1] == 'all':
         goall()
+    elif argv[1] == 'optimize':
+        gooptimize()
 elif len(argv) > 2:
     sentence = " ".join(argv[3::])
     goSingleSentence(argv[1], argv[2], sentence)

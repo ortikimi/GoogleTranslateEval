@@ -2,6 +2,8 @@ import os
 from translate.storage.tmx import tmxfile
 from Common.multi_lingual_sentence import MultiLingualSentence
 
+'''For future work, working with OPUS corpus'''
+
 WIKIPEDIA_FILE = 'corpus.tmx'
 
 def get_parallel_corpus():
