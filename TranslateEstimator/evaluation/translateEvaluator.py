@@ -13,8 +13,8 @@ class TranslateEvaluator:
             {
                 'Tag':'VERB',
                 'Weight': 1,
-                'en': ('VB','VBD','VBG','VBN'),
-                'he' : ('BN')
+                'en': ('VB','VBG','VBN','MD'),
+                'he' : ('VB','BN','MD')
                 },
             {
                 'Tag':'PRONOUN',
@@ -31,7 +31,7 @@ class TranslateEvaluator:
             {
                 'Tag':'COP',
                 'Weight': 0.5,
-                'en': ('VBZ,VBP'),
+                'en': ('VBD,VBZ,VBP'),
                 'he' : ('COP')
                 },
             {

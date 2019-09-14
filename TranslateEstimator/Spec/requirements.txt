@@ -3,3 +3,4 @@ nltk==3.4.4
 matplotlib==3.1.1
 googletrans==2.4.0
 requests==2.21.0
+xlrd==1.2.0

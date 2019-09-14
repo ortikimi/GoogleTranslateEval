@@ -13,7 +13,6 @@ def get_parallel_corpus():
     sheet = wb.sheet_by_index(0)
     sheet.cell_value(0, 0)
     for i in range(1,sheet.nrows):
-        print(sheet.cell_value(i, 0))
         sentence = MultiLingualSentence(sheet.cell_value(i, 0), sheet.cell_value(i, 1))
         multi_lingual_sentences.append(sentence)
     return multi_lingual_sentences
