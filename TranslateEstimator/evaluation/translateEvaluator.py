@@ -21,25 +21,25 @@ class TranslateEvaluator:
             {
                 'Tag':'PRONOUN',
                 'Weight': 0.5,
-                'en': ('PRP, PRP$'),
-                'he' : ('PRP, S_PRN')
+                'en': ('PRP', ' PRP$'),
+                'he' : ('PRP', ' S_PRN')
                 },
             {
                 'Tag':'NAME',
                 'Weight': 1,
                 'en': ('NNP', 'NNPS'),
-                'he' : ('NNP')
+                'he' : ('NNP',)
                 },
             {
                 'Tag':'COP',
                 'Weight': 0.5,
-                'en': ('VBD,VBZ,VBP'),
-                'he' : ('COP')
+                'en': ('VBD', 'VBZ', 'VBP'),
+                'he' : ('COP',)
                 },
             {
                 'Tag':'DET',
                 'Weight': 0.1,
-                'en': ('DT'),
+                'en': ('DT',),
                 'he' : ('REL', 'DEF')
                 },
             {
@@ -52,37 +52,37 @@ class TranslateEvaluator:
                 'Tag':'NOUN',
                 'Weight': 0.2,
                 'en': ('NN', 'NNS'),
-                'he' : ('NN, NNT')
+                'he' : ('NN', ' NNT')
                 },
             {
                 'Tag':'ADJECTIVE',
                 'Weight': 0.2,
                 'en': ('JJ', 'JJS'),
-                'he' : ('JJ')
+                'he' : ('JJ',)
                 },
             {
                 'Tag':'RB',
                 'Weight': 0.2,
-                'en': ('RB'),
-                'he' : ('RB')
+                'en': ('RB',),
+                'he' : ('RB',)
                 },
             {
                 'Tag':'ADP',
                 'Weight': 0.1,
-                'en': ('IN'),
+                'en': ('IN',),
                 'he' : ('IN', 'POS', 'PREPOSITION')
                 },
             {
                 'Tag':'AND',
                 'Weight': 0.1,
-                'en': ('CC'),
-                'he' : ('CONJ')
+                'en': ('CC',),
+                'he' : ('CONJ',)
                 },
             {
                 'Tag':'EXIST',
                 'Weight': 0.1,
-                'en': ('EX'),
-                'he' : ('EX')
+                'en': ('EX',),
+                'he' : ('EX',)
                 }
         ]
         
