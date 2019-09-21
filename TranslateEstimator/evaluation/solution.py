@@ -1,9 +1,10 @@
-import csv
-import codecs
 import ast
+import codecs
+import csv
 import json
 
 from nltk.translate.bleu_score import sentence_bleu
+
 from Common.eval_result import EvalResult
 from TED.tedTalksCSV import get_parallel_corpus
 from evaluation.spredsheet_results import SpredSheetResults
@@ -11,9 +12,11 @@ from evaluation.translateEvaluator import TranslateEvaluator
 from google_api.translator import GoogleTranslator
 from tagging.tagger import Tagger
 
-LIMIT_PARSER = 10
+
+LIMIT_PARSER = 101
 
 OPTIMIZED_HE_FILE = 'optimizedhe.csv'
+
 
 class Solution:
     
@@ -75,7 +78,7 @@ class Solution:
         csvread = csv.reader(f, delimiter='\t')
         line_count = 0
         for row in csvread:
-            if (line_count %2) == 0 and line_count > 0:
+            if (line_count % 2) == 0 and line_count > 0:
                 self.src_sentences.append(row[0])
                 self.translated_sentences.append(row[1])
                 self.gold_sentences.append(row[2])
