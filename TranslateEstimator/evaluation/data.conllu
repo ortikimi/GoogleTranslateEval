@@ -1,0 +1,6 @@
+0	1	ב	ב	PREPOSITION	PREPOSITION	_	1
+1	2	ה	ה	DEF	DEF	_	1
+2	3	צבא	צבא	NN	NN	gen=M|num=S	1
+3	4	מכשירים	הכשיר	BN	BN	gen=M|num=P|per=A	2
+4	5	חיילים	חייל	NN	NN	gen=M|num=P	3
+
