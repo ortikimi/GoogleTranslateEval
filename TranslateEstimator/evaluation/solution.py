@@ -14,7 +14,6 @@ from tagging.tagger import Tagger
 
 
 LIMIT_PARSER = 101
-
 OPTIMIZED_HE_FILE = 'optimizedhe.csv'
 
 
@@ -78,7 +77,7 @@ class Solution:
         csvread = csv.reader(f, delimiter='\t')
         line_count = 0
         for row in csvread:
-            if (line_count % 2) == 0 and line_count > 0:
+            if  line_count > 0 and len(row) > 0:
                 self.src_sentences.append(row[0])
                 self.translated_sentences.append(row[1])
                 self.gold_sentences.append(row[2])
@@ -93,17 +92,21 @@ class Solution:
         results = []
         for idx, tagged_sent in enumerate(self.tagged_src_sentences):
             result = EvalResult(self.src_sentences[idx], self.translated_sentences[idx])
-            result.set_eval_score(evaluator.evaluate_pos_tagging(tagged_sent, self.tagged_translated_sentences[idx]))
+            google_tagged_obj = evaluator.evaluate_pos_tagging(tagged_sent, self.tagged_translated_sentences[idx])
+            result.set_eval_score(google_tagged_obj['score'])
+            result.set_google_comparison(google_tagged_obj['num_of_tags'])
             result.set_gold_sentence(self.gold_sentences[idx])
-            result.set_gold_score(evaluator.evaluate_pos_tagging(tagged_sent, self.tagged_gold_sentences[idx]))
+            gold_tagged_obj = evaluator.evaluate_pos_tagging(tagged_sent, self.tagged_gold_sentences[idx])
+            result.set_gold_score(gold_tagged_obj['score'])
+            result.set_gold_comparison(gold_tagged_obj['num_of_tags'])
             result.set_gold_tag(self.tagged_gold_sentences[idx])
+            self.set_bleu_score(self.gold_sentences[idx], self.translated_sentences[idx], result)
             if (self.source_language == 'he'):
                 result.set_english_tag(self.tagged_translated_sentences[idx])
                 result.set_hebrew_tag(tagged_sent)
             else:
                 result.set_english_tag(tagged_sent)
                 result.set_hebrew_tag(self.tagged_translated_sentences[idx])
-            self.set_bleu_score(self.gold_sentences[idx], self.translated_sentences[idx], result)
             results.append(result)
 
         spredsheets_result.write_spreadsheet(results, self.source_language)

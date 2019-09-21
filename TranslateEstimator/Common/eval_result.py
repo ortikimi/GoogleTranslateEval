@@ -11,6 +11,8 @@ class EvalResult:
         self.hebrew_tag = ''
         self.english_tag = ''
         self.gold_tag = ''
+        self.google_comparison = ''
+        self.gold_comparison = ''
 
     def set_eval_score(self, score):
         self.score = score
@@ -35,4 +37,10 @@ class EvalResult:
 
     def set_gold_tag(self, gold_tag):
         self.gold_tag = gold_tag
+
+    def set_google_comparison(self, google_comparison):
+        self.google_comparison = google_comparison
+
+    def set_gold_comparison(self, gold_comparison):
+        self.gold_comparison = gold_comparison
 
