@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cf32d8e-cf81-4a75-8f01-473efb1d8011" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/googletranslateeval.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/googletranslateeval.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateEstimator/cky/ckyParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/cky/ckyParser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/data.conllu" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/evaluation/data.conllu" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/go.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/evaluation/go.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/optimizeden.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateEstimator/evaluation/translatedhe.csv" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateEstimator/evaluation/translatedhe.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ckyParser.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ckyParser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TranslateEstimator/cky/ckyParser.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+              <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -31,8 +28,8 @@
       <file leaf-file-name="go.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/go.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="68" selection-start-line="68" selection-end-line="68" />
+            <state relative-caret-position="96">
+              <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -49,7 +46,7 @@
       <file leaf-file-name="tedTalksCSV.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TranslateEstimator/TED/tedTalksCSV.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="136">
               <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -79,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="solution.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="solution.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="86" column="52" selection-start-line="86" selection-start-column="52" selection-end-line="86" selection-end-column="52" />
+            <state relative-caret-position="255">
+              <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -103,8 +100,8 @@
       <file leaf-file-name="translateEvaluator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/translateEvaluator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="623">
+              <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
             </state>
           </provider>
         </entry>
@@ -153,9 +150,9 @@
         <option value="$PROJECT_DIR$/TranslateEstimator/TED/tedTalks.py" />
         <option value="$PROJECT_DIR$/TranslateEstimator/Wikipedia/wikipedia.py" />
         <option value="$PROJECT_DIR$/TranslateEstimator/TED/tedTalksCSV.py" />
+        <option value="$PROJECT_DIR$/TranslateEstimator/cky/ckyParser.py" />
         <option value="$PROJECT_DIR$/TranslateEstimator/evaluation/go.py" />
         <option value="$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py" />
-        <option value="$PROJECT_DIR$/TranslateEstimator/cky/ckyParser.py" />
       </list>
     </option>
   </component>
@@ -173,7 +170,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,26 +192,49 @@
               <item name="googletranslateeval" type="b2602c69:ProjectViewProjectNode" />
               <item name="googletranslateeval" type="462c0819:PsiDirectoryNode" />
               <item name="TranslateEstimator" type="462c0819:PsiDirectoryNode" />
-              <item name="yapproj" type="462c0819:PsiDirectoryNode" />
+              <item name="Common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="googletranslateeval" type="b2602c69:ProjectViewProjectNode" />
+              <item name="googletranslateeval" type="462c0819:PsiDirectoryNode" />
+              <item name="TranslateEstimator" type="462c0819:PsiDirectoryNode" />
+              <item name="evaluation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="googletranslateeval" type="b2602c69:ProjectViewProjectNode" />
+              <item name="googletranslateeval" type="462c0819:PsiDirectoryNode" />
+              <item name="TranslateEstimator" type="462c0819:PsiDirectoryNode" />
+              <item name="google_api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="googletranslateeval" type="b2602c69:ProjectViewProjectNode" />
+              <item name="googletranslateeval" type="462c0819:PsiDirectoryNode" />
+              <item name="TranslateEstimator" type="462c0819:PsiDirectoryNode" />
+              <item name="Spec" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="googletranslateeval" type="b2602c69:ProjectViewProjectNode" />
+              <item name="googletranslateeval" type="462c0819:PsiDirectoryNode" />
+              <item name="TranslateEstimator" type="462c0819:PsiDirectoryNode" />
+              <item name="tagging" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="googletranslateeval" type="b2602c69:ProjectViewProjectNode" />
+              <item name="googletranslateeval" type="462c0819:PsiDirectoryNode" />
+              <item name="TranslateEstimator" type="462c0819:PsiDirectoryNode" />
+              <item name="TED" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="googletranslateeval" type="b2602c69:ProjectViewProjectNode" />
               <item name="googletranslateeval" type="462c0819:PsiDirectoryNode" />
               <item name="TranslateEstimator" type="462c0819:PsiDirectoryNode" />
               <item name="yapproj" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="googletranslateeval" type="b2602c69:ProjectViewProjectNode" />
-              <item name="googletranslateeval" type="462c0819:PsiDirectoryNode" />
-              <item name="TranslateEstimator" type="462c0819:PsiDirectoryNode" />
-              <item name="yapproj" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -347,18 +366,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24739583" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24739583" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34745762" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32968536" />
       <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34745762" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.6200565" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.6200565" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -370,21 +388,21 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24739583" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32968536" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3474692" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32909605" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.5677966" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32968536" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32909605" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -435,7 +453,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/TranslateEstimator/evaluation/go.py</url>
-          <line>68</line>
+          <line>67</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -445,17 +463,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py</url>
-          <line>84</line>
+          <line>81</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py</url>
-          <line>98</line>
+          <line>91</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py</url>
-          <line>89</line>
+          <line>82</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
       </breakpoints>
@@ -723,44 +741,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TranslateEstimator/TED/tedTalksCSV.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/translateEvaluator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/spredsheet_results.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
           <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/go.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="86" column="52" selection-start-line="86" selection-start-column="52" selection-end-line="86" selection-end-column="52" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -777,7 +761,41 @@
     <entry file="file://$PROJECT_DIR$/TranslateEstimator/cky/ckyParser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/translateEvaluator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TranslateEstimator/TED/tedTalksCSV.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/go.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TranslateEstimator/evaluation/solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

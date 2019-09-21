@@ -14,7 +14,6 @@ from tagging.tagger import Tagger
 LIMIT_PARSER = 10
 
 OPTIMIZED_HE_FILE = 'optimizedhe.csv'
-OPTIMIZED_EN_FILE = 'optimizeden.csv'
 
 class Solution:
     
@@ -48,8 +47,6 @@ class Solution:
         elif (self.optimize):
             if (self.source_language == 'he'):
                 self.optimized_parser(OPTIMIZED_HE_FILE)
-            else:
-                self.optimized_parser(OPTIMIZED_EN_FILE)
         # Else parse all the sentences
         else:
             multi_lingual_sentences = get_parallel_corpus()[:LIMIT_PARSER]

@@ -50,17 +50,16 @@ def goall():
 def gooptimize():
     print()
     print("==========")
-    print("Translating from Hebrew to English and vice versa with optimized tagging.")
+    print("Translating from Hebrew to English with optimized tagging.")
     gohe(True)
-    goen(True)
 
 def print_usage():
     print()
     print("Usage:")
-    print('python go.py he - translates hebrew sentences to english sentences using exiting corpus.')
-    print('python go.py en - translates english sentences to hebrew sentences using exiting corpus.')
-    print('python go.py all translates english sentences to hebrew and vice versa')
-    print('python go.py optimize translates english sentences to hebrew and vice versa with optimized parsing.')
+    print('python go.py he - translates Hebrew sentences to English sentences using exiting corpus.')
+    print('python go.py en - translates English sentences to Hebrew sentences using exiting corpus.')
+    print('python go.py all translates English sentences to Hebrew and vice versa')
+    print('python go.py optimize translates Hebrew sentences to English sentences using exiting corpus and optimized parsing ')
     print('python go.py <source_lang> <dest_lang> <sentence> - translates given sentence without gold evaluation')
     print()
 
