@@ -97,7 +97,6 @@ class TranslateEvaluator:
         if(eval_of_src == 0 or eval_of_dst == 0):
             return 0
         else: 
-            print('***eval_of_dst*****')
             if (eval_of_src < eval_of_dst):
                 return {"score": eval_of_src / eval_of_dst, "source_tags":  src_tags_output, "dest_tags": dst_tags_output}
             else:
