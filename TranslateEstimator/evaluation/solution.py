@@ -19,10 +19,9 @@ OPTIMIZED_HE_FILE = 'optimizedhe.csv'
 
 class Solution:
     
-    def __init__(self, source_language, destination_language, optimize=False, sentence=None):
+    def __init__(self, source_language, destination_language, optimize=False):
         self.source_language = source_language
         self.destination_language = destination_language
-        self.sentence = sentence
         self.optimize = optimize
         self.src_sentences = []
         self.gold_sentences = []
@@ -35,18 +34,7 @@ class Solution:
         googleTranslator = GoogleTranslator(self.source_language, self.destination_language)
         tagger = Tagger()
 
-        # If we recieved only one sentence
-        if (self.sentence != None):
-            src_sentences = [self.sentence]
-            translated_sentences = [googleTranslator.translate(self.sentence).text]
-            self.gold_sentences = [' ']
-            if (self.source_language == 'he'):
-                self.tagged_src_sentences = tagger.tag_heb_sentences(src_sentences)
-                self.tagged_translated_sentences = tagger.tag_eng_sentences(translated_sentences)
-            else:
-                self.tagged_src_sentences = tagger.tag_eng_sentences(src_sentences)
-                self.tagged_translated_sentences = tagger.tag_heb_sentences(translated_sentences)
-        elif (self.optimize):
+        if (self.optimize):
             if (self.source_language == 'he'):
                 self.optimized_parser(OPTIMIZED_HE_FILE)
         # Else parse all the sentences

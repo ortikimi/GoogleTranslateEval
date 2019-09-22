@@ -17,29 +17,6 @@ def goen(optimize=False):
     eval = Solution('en', 'he', optimize)
     eval.evaluate()
 
-def checkInput(source_lang, dest_lang, sentence):
-    if source_lang != 'he' and source_lang != 'en':
-        print('Unsupported source language. Supported languages are English and Hebrew')
-        return False
-    if dest_lang != 'he' and dest_lang != 'en':
-        print('Unsupported destination language. Supported languages are English and Hebrew')
-        return False
-    if len(sentence) < 2:
-        print('Wrong sentence format. Please try again')
-        return False
-    return True
-
-
-def goSingleSentence(source_lang, dest_lang, sentence):
-    if checkInput(source_lang, dest_lang, sentence) == False:
-        return
-    print()
-    print("==========")
-    print("Evaluting translation of a given sentence")
-    print()
-    eval = Solution(source_lang, dest_lang, sentence)
-    eval.evaluate()
-
 def goall():
     print()
     print("==========")
@@ -60,7 +37,6 @@ def print_usage():
     print('python go.py en - translates English sentences to Hebrew sentences using exiting corpus.')
     print('python go.py all translates English sentences to Hebrew and vice versa')
     print('python go.py optimize translates Hebrew sentences to English sentences using exiting corpus and optimized parsing ')
-    print('python go.py <source_lang> <dest_lang> <sentence> - translates given sentence without gold evaluation')
     print()
 
 
@@ -74,8 +50,5 @@ if len(argv) == 2:
         goall()
     elif argv[1] == 'optimize':
         gooptimize()
-elif len(argv) > 2:
-    sentence = " ".join(argv[3::])
-    goSingleSentence(argv[1], argv[2], sentence)
 else:
     print_usage()
